@@ -1,0 +1,12 @@
+Location,Climate,Geography,Winter,Fall,Spring,Summer,Cross country ,Downhill
+Whistler,Temperate,West,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE
+Snowshoe,Temperate,East,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE
+Angel Fire,Desert,Mountain,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE
+Vermont,Temperate,East,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+Asheville,Temperate,East,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+Moab,Desert,Mountain,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+St. George,Desert,Mountain,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+Sedona,Desert,Mountain,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+Jackson Hole,Temperate,Mountain,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+Fruita,Desert,Mountain,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+Lake Tahoe,Mediterannean ,West,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE
