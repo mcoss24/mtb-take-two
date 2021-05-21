@@ -1,0 +1,128 @@
+<div>
+  <div>
+    <h1>
+      List of all spots
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          Climate
+        </th>
+
+        <th>
+          Geography
+        </th>
+
+        <th>
+          Winter
+        </th>
+
+        <th>
+          Fall
+        </th>
+
+        <th>
+          Spring
+        </th>
+
+        <th>
+          Summer
+        </th>
+
+        <th>
+          Cross country
+        </th>
+
+        <th>
+          Downhill
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_spots.each do |a_spot| %>
+      <tr>
+        <td>
+          <%= a_spot.id %>
+        </td>
+
+        <td>
+          <%= a_spot.location %>
+        </td>
+
+        <td>
+          <%= a_spot.climate %>
+        </td>
+
+        <td>
+          <%= a_spot.geography %>
+        </td>
+
+        <td>
+          <%= a_spot.winter %>
+        </td>
+
+        <td>
+          <%= a_spot.fall %>
+        </td>
+
+        <td>
+          <%= a_spot.spring %>
+        </td>
+
+        <td>
+          <%= a_spot.summer %>
+        </td>
+
+        <td>
+          <%= a_spot.cross_country %>
+        </td>
+
+        <td>
+          <%= a_spot.downhill %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_spot.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_spot.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/spots/<%= a_spot.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

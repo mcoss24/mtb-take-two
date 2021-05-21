@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Trail #<%= @the_trail.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/trails">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_trail/<%= @the_trail.id %>">
+          Delete trail
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_trail.name %>
+      </dd>
+
+      <dt>
+        Spot
+      </dt>
+      <dd>
+        <%= @the_trail.spot_id %>
+      </dd>
+
+      <dt>
+        Link
+      </dt>
+      <dd>
+        <%= @the_trail.link %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_trail.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_trail.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit trail
+    </h2>
+
+    <form action="/modify_trail/<%= @the_trail.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_trail.name %>">
+      </div>
+
+      <div>
+        <label for="spot_id_box">
+          Spot
+        </label>
+
+        <input type="text" id="spot_id_box" name="query_spot_id" value="<%= @the_trail.spot_id %>">
+      </div>
+
+      <div>
+        <label for="link_box">
+          Link
+        </label>
+
+        <input type="text" id="link_box" name="query_link" value="<%= @the_trail.link %>">
+      </div>
+
+      <button>
+        Update trail
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

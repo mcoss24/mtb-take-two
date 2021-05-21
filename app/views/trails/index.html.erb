@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all trails
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new trail
+    </h2>
+
+    <form action="/insert_trail" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="spot_id_box">
+          Spot
+        </label>
+
+        <input type="text" id="spot_id_box" name="query_spot_id">
+      </div>
+
+      <div>
+        <label for="link_box">
+          Link
+        </label>
+
+        <input type="text" id="link_box" name="query_link">
+      </div>
+
+      <button>
+        Create trail
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Spot
+        </th>
+
+        <th>
+          Link
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_trails.each do |a_trail| %>
+      <tr>
+        <td>
+          <%= a_trail.id %>
+        </td>
+
+        <td>
+          <%= a_trail.name %>
+        </td>
+
+        <td>
+          <%= a_trail.spot_id %>
+        </td>
+
+        <td>
+          <%= a_trail.link %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_trail.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_trail.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/trails/<%= a_trail.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
