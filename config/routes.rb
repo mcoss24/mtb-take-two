@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
+  # Routes for Pages
+  
+  # homepage 
+  get("/", { :controller => "pages", :action => "index" })
+  
+  # planner 
+  get("/plan", { :controller => "pages", :action => "plan" })
+  
+  #selected
 
+  get("/selected", {:controller => "pages", :action => "selected"})
+
+  
   # Routes for the Spot resource:
 
   # CREATE
