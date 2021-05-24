@@ -18,13 +18,13 @@ class PagesController < ApplicationController
     @climate = params.fetch("climate").capitalize
     @type = @list.at(-3)
 
-    @query1 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}).first
+    @query1 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true})
     #@query2 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}).at(1)
 
     if @query1 == nil 
       @failure = "We're sorry, but you are a failure! Try entering criteria that exist"
     else
-      @recc1 = @query1.location 
+      @recc1 = @query1 
       #@recc2 = @query2.location 
     end
      

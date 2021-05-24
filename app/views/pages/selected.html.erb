@@ -1,5 +1,17 @@
 <div>
-  Your criteria match <%= @recc1 %>!
+  Your criteria match: 
+  <% @recc1.each do |location| %>
+    <p>
+    <%= location.location %>
+    <a href="/spots/<%= location.id %>">
+      Link
+    </a>
+    </p>
+  <%end%>
+</div>
+
+
+
 <div>
   <%= @failure %>
 </div>
