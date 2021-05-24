@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Spot #<%= @the_spot.id %> details
+      <%= @the_spot.location %> details
     </h1>
 
     <div>
@@ -11,20 +11,10 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_spot/<%= @the_spot.id %>">
-          Delete spot
-        </a>
-      </div>
     </div>
 
     <dl>
-      <dt>
-        Location
-      </dt>
-      <dd>
-        <%= @the_spot.location %>
-      </dd>
+
 
       <dt>
         Climate
@@ -40,34 +30,7 @@
         <%= @the_spot.geography %>
       </dd>
 
-      <dt>
-        Winter
-      </dt>
-      <dd>
-        <%= @the_spot.winter %>
-      </dd>
-
-      <dt>
-        Fall
-      </dt>
-      <dd>
-        <%= @the_spot.fall %>
-      </dd>
-
-      <dt>
-        Spring
-      </dt>
-      <dd>
-        <%= @the_spot.spring %>
-      </dd>
-
-      <dt>
-        Summer
-      </dt>
-      <dd>
-        <%= @the_spot.summer %>
-      </dd>
-
+      
       <dt>
         Cross country
       </dt>
@@ -83,109 +46,19 @@
       </dd>
 
       <dt>
-        Created at
+        Trails
       </dt>
+      <% @trails.each do |trail|%>
       <dd>
-        <%= time_ago_in_words(@the_spot.created_at) %> ago
+        <%= trail.name %>
+        <a href="<%= trail.link %>">
+          Link
+        </a>
+      
       </dd>
+      <%end%>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_spot.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
 
-<hr>
-
-
-<div>
-  <div>
-    <h2>
-      Edit spot
-    </h2>
-
-    <form action="/modify_spot/<%= @the_spot.id %>"  method="post" >
-      <div>
-        <label for="location_box">
-          Location
-        </label>
-
-        <input type="text" id="location_box" name="query_location" value="<%= @the_spot.location %>">
-      </div>
-
-      <div>
-        <label for="climate_box">
-          Climate
-        </label>
-
-        <input type="text" id="climate_box" name="query_climate" value="<%= @the_spot.climate %>">
-      </div>
-
-      <div>
-        <label for="geography_box">
-          Geography
-        </label>
-
-        <input type="text" id="geography_box" name="query_geography" value="<%= @the_spot.geography %>">
-      </div>
-
-      <div>
-        <input type="checkbox" id="winter_box" name="query_winter" value="1" <%= "checked" if @the_spot.winter %>>
-
-        <label for="winter_box">
-            Winter
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="fall_box" name="query_fall" value="1" <%= "checked" if @the_spot.fall %>>
-
-        <label for="fall_box">
-            Fall
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="spring_box" name="query_spring" value="1" <%= "checked" if @the_spot.spring %>>
-
-        <label for="spring_box">
-            Spring
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="summer_box" name="query_summer" value="1" <%= "checked" if @the_spot.summer %>>
-
-        <label for="summer_box">
-            Summer
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="cross_country_box" name="query_cross_country" value="1" <%= "checked" if @the_spot.cross_country %>>
-
-        <label for="cross_country_box">
-            Cross country
-        </label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="downhill_box" name="query_downhill" value="1" <%= "checked" if @the_spot.downhill %>>
-
-        <label for="downhill_box">
-            Downhill
-        </label>
-      </div>
-
-      <button>
-        Update spot
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>

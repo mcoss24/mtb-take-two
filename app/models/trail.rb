@@ -11,4 +11,6 @@
 #
 class Trail < ApplicationRecord
   belongs_to(:spot, { :required => false, :class_name => "Spot", :foreign_key => "spot_id" })
+
+  
 end

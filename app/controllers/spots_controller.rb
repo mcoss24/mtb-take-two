@@ -13,6 +13,8 @@ class SpotsController < ApplicationController
     matching_spots = Spot.where({ :id => the_id })
 
     @the_spot = matching_spots.at(0)
+    @trails = Trail.where({:spot_id => the_id})
+
 
     render({ :template => "spots/show.html.erb" })
   end
