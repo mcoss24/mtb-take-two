@@ -13,11 +13,11 @@ class PagesController < ApplicationController
     @list = params.keys()
         
     @season = @list.at(0)
-    @geography = @list.at(1)
-    @climate = @list.at(2)
+    @geography = params.fetch("geography").capitalize
+    @climate = params.fetch("climate")
     @type = @list.at(3)
 
-    @query = Spot.where({@season => true}).where({@geography => true}).where({@climate => true}).where({@type => true}).first
+    @query = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}).first
 
     if @query == nil
       @failure = "We're sorry, but you are a failure"

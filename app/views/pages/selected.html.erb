@@ -1,15 +1,12 @@
 <div>
-  You're headed to <%= @recc %> !
+  <% if @recc.class != nil %>
+    <% p "You are headed to" %> <%= @recc %> <% p "!" %>
+  <%end%>
 </div>
 
 <div>
   <%= @failure %>
 </div>
 
-<div>
-  <%= @list %>
-</div>
 
-<div>
-  <%= @season %>
-</div>
+

@@ -15,7 +15,7 @@ namespace :slurp do
       s.fall = row['Fall']
       s.spring = row['Spring']
       s.summer = row['Summer']
-      s.cross_country = row['Cross Country']
+      s.cross_country = row['cross_country']
       s.downhill = row['Downhill']
       s.save
     end
