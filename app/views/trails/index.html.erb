@@ -51,16 +51,14 @@
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
+
 
         <th>
           Name
         </th>
 
         <th>
-          Spot
+          Destination
         </th>
 
         <th>
@@ -68,22 +66,12 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
+          Details
         </th>
       </tr>
 
       <% @list_of_trails.each do |a_trail| %>
       <tr>
-        <td>
-          <%= a_trail.id %>
-        </td>
 
         <td>
           <%= a_trail.name %>
@@ -94,16 +82,11 @@
         </td>
 
         <td>
-          <%= a_trail.link %>
+          <a href="<%= a_trail.link %>">
+            External link
+          </a>
         </td>
-
-        <td>
-          <%= time_ago_in_words(a_trail.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_trail.updated_at) %> ago
-        </td>
-
+       
         <td>
           <a href="/trails/<%= a_trail.id %>">
             Show details
