@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def selected
     
     @list = params.keys()
-    #@long = @list.length
+    @long = @list.count
         
     @season = @list.at(0)
     @geography = params.fetch("geography").capitalize
@@ -19,13 +19,12 @@ class PagesController < ApplicationController
     @type = @list.at(-3)
 
     @query1 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true})
-    #@query2 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}).at(1)
-
+    
     if @query1 == nil 
       @failure = "We're sorry, but you are a failure! Try entering criteria that exist"
     else
       @recc1 = @query1 
-      #@recc2 = @query2.location 
+      
     end
      
     render({:template => "pages/selected.html.erb"})
