@@ -23,14 +23,13 @@ class PagesController < ApplicationController
                                                                                                                                     # based on the user's prefs
     #@photo = Photo.where({:spot_id => })
 
-    if @query1 == nil 
-      @failure = "We're sorry, but you are a failure! Try entering criteria that exist"
+    if @query1.first == nil 
+      
+      redirect_to("/plan", { :alert => "The criteria selected do not match a destination. Please try again."})
     else
       @recc1 = @query1 
-      
-    end
-     
-    render({:template => "pages/selected.html.erb"})
+      render({:template => "pages/selected.html.erb"})
+    end   
   end
     
 
