@@ -25,7 +25,7 @@
 
       <div>
         <label for="spot_id_box">
-          Spot
+          Location
         </label>
 
         <input type="text" id="spot_id_box" name="query_spot_id">
@@ -78,7 +78,7 @@
         </td>
 
         <td>
-          <%= a_trail.spot_id %>
+          <%= Spot.where({ :id => a_trail.spot_id}).first.location %>
         </td>
 
         <td>

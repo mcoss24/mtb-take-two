@@ -43,15 +43,15 @@
         </a>
       
       </dd>
-     
+      <%end%>
       
       <dt>
         Image
       </dt>
       <dd>
-        <%= @photos.image %>
+        <img src="<%= @photos.first.image %>" alt="probably somewhere beautiful" width="750" height="750">
       </dd>
-       <%end%>
+       
     </dl>
   </div>
 </div>
