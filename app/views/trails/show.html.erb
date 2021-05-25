@@ -26,11 +26,11 @@
         Location
       </dt>
       <dd>
-        <%= @the_trail.spot_id %>
+        <%=Spot.where({:id => @the_trail.spot_id}).first.location %>
       </dd>
 
       <dt>
-        Link
+        External Link
       </dt>
       <dd>
         <a href="<%= @the_trail.link %>">

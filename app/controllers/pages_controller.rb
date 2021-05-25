@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 
     if @query1.first == nil 
       
-      redirect_to("/plan", { :alert => "The criteria selected do not match a destination. Please try again."})
+      redirect_to("/plan", { :alert => "The criteria selected do not match a destination. Please try again!"})
     else
       @recc1 = @query1 
       render({:template => "pages/selected.html.erb"})
