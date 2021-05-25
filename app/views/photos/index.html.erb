@@ -43,16 +43,13 @@
   <div>
     <table>
       <tr>
+        
         <th>
-          ID
+          Image Link
         </th>
 
         <th>
-          Image
-        </th>
-
-        <th>
-          Spot
+          Location
         </th>
 
         <th>
@@ -69,16 +66,16 @@
 
       <% @list_of_photos.each do |a_photo| %>
       <tr>
+        
+
         <td>
-          <%= a_photo.id %>
+          <a href= "<%= a_photo.image %>" >
+            Full Sized Image 
+          </a>
         </td>
 
         <td>
-          <%= a_photo.image %>
-        </td>
-
-        <td>
-          <%= a_photo.spot_id %>
+          <%= Spot.where({ :id => a_photo.spot_id }).first.location %>
         </td>
 
         <td>

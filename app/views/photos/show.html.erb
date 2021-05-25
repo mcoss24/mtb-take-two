@@ -1,8 +1,8 @@
 <div>
   <div>
-    <h1>
+    <h2>
       Photo #<%= @the_photo.id %> details
-    </h1>
+    </h2>
 
     <div>
       <div>
@@ -11,28 +11,28 @@
         </a>
       </div>
 
-      <div>
-        <a href="/delete_photo/<%= @the_photo.id %>">
-          Delete photo
-        </a>
-      </div>
+
     </div>
 
     <dl>
+      <p>
+      <dt>
+        Location
+      </dt>
+      </p>
+      <p>
+      <h5>
+        <%= Spot.where({:id => @the_photo.spot_id}).first.location %>
+      </h5>
+      </p>
       <dt>
         Image
       </dt>
       <dd>
-        <%= @the_photo.image %>
+        <img src="<%= @the_photo.image %>" alt= "a beautiful location somewhere" width = "1000" height = "750">
       </dd>
 
-      <dt>
-        Spot
-      </dt>
-      <dd>
-        <%= @the_photo.spot_id %>
-      </dd>
-
+   
       <dt>
         Created at
       </dt>
@@ -62,7 +62,7 @@
     <form action="/modify_photo/<%= @the_photo.id %>"  method="post" >
       <div>
         <label for="image_box">
-          Image
+          Image URL
         </label>
 
         <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>">
@@ -70,10 +70,10 @@
 
       <div>
         <label for="spot_id_box">
-          Spot
+          Location
         </label>
 
-        <input type="text" id="spot_id_box" name="query_spot_id" value="<%= @the_photo.spot_id %>">
+        <input type="text" id="spot_id_box" name="query_spot_id" value="<%= Spot.where({:id => @the_photo.spot_id}).first.location %>">
       </div>
 
       <button>
