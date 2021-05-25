@@ -1,13 +1,16 @@
 <div>
-  <p>
+  <h4>
   Your criteria match: 
-  </p>
+  </h4>
   <% @recc1.each do |location| %>
-    <p>
+    <h4>
     <%= location.location %>
     <a href="/spots/<%= location.id %>">
       Link
     </a>
+    </h4>
+    <p>
+      <img src="<%= Photo.where({:spot_id => location.id}).first.image %>" alt="Some dude shredding gnar" width="750" height="750">
     </p>
   <%end%>
 </div>

@@ -14,6 +14,7 @@ class SpotsController < ApplicationController
 
     @the_spot = matching_spots.at(0)
     @trails = Trail.where({:spot_id => the_id})
+    @photos = Photo.where
 
 
     render({ :template => "spots/show.html.erb" })
