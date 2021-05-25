@@ -1,4 +1,10 @@
+
 <div>
+<div>
+  <a href="/plan">
+    Start over
+  </a>
+</div>
   
   <h4>
   Your criteria has <%= @query1.count%> match(es): 
@@ -14,11 +20,5 @@
       <img src="<%= Photo.where({:spot_id => location.id}).first.image %>" alt="Some dude shredding gnar" width="750" height="750">
     </p>
   <%end%>
-</div>
-
-
-
-<div>
-  <%= @failure %>
 </div>
 
