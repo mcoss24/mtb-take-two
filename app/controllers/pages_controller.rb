@@ -14,14 +14,14 @@ class PagesController < ApplicationController
     @long = @list.count # how long is it?
     
         
-    @season = @list.at(0) 
-    @geography = params.fetch("geography", false)
-    @climate = params.fetch("climate", false)
-    @type = @list.at(-3)
+    @season = params.fetch("season", "summer") 
+    @geography = params.fetch("geography", "Mountain")
+    @climate = params.fetch("climate", "Temperate")
+    @type = params.fetch("type", "cross_country")
 
 
-    @query1 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}) # get the record the based on the 
-                                                                                                                                    # based on the user's prefs
+    @query1 = Spot.where({@season => true}).where({:geography => @geography}).where({ :climate => @climate}).where({@type => true}) # get the record  
+                                                                                                                                    
     
     if @query1.first == nil 
       
