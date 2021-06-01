@@ -20,7 +20,7 @@ class TrailsController < ApplicationController
   def create
     the_trail = Trail.new
     the_trail.name = params.fetch("query_name")
-    the_trail.spot_id = params.fetch("query_spot_id")
+    the_trail.spot_id = Spot.where({ :location => params.fetch("query_spot_id")}).first.id
     the_trail.link = params.fetch("query_link")
 
     if the_trail.valid?
