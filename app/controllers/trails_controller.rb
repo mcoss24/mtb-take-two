@@ -20,10 +20,14 @@ class TrailsController < ApplicationController
   def create
     the_trail = Trail.new
     the_trail.name = params.fetch("query_name")
-    the_trail.spot_id = Spot.where({ :location => params.fetch("query_spot_id")}).first.id
+    begin
+      the_trail.spot_id = Spot.where({ :location => params.fetch("query_spot_id")}).first.id
+    rescue
+      the_trail.spot_id = false
+    end
     the_trail.link = params.fetch("query_link")
 
-    if the_trail.valid?
+    if the_trail.spot_id.valid?
       the_trail.save
       redirect_to("/trails", { :notice => "Trail created successfully." })
     else
